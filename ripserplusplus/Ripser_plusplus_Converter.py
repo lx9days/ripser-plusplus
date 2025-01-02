@@ -91,6 +91,7 @@ def Ripser_plusplus_Converter(prog, arguments, file_name, file_format, user_matr
 
     # Read from file if not given
     if user_matrix is None:
+        print("fromR++: user_matrix is None")
         if file_format in matrix_formats:
             
 
@@ -115,6 +116,8 @@ def Ripser_plusplus_Converter(prog, arguments, file_name, file_format, user_matr
             return
 
     else:
+        
+        print("fromR++: user_matrix")
 
         if file_format == "distance":
             num_entries, num_rows, num_columns, user_matrix = distance_matrix_user_matrix(user_matrix)
