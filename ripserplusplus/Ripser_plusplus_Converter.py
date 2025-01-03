@@ -91,7 +91,7 @@ def Ripser_plusplus_Converter(prog, arguments, file_name, file_format, user_matr
 
     # Read from file if not given
     if user_matrix is None:
-        print("fromR++: user_matrix is None")
+        print("RPC: user_matrix is None")
         if file_format in matrix_formats:
             
 
@@ -117,7 +117,7 @@ def Ripser_plusplus_Converter(prog, arguments, file_name, file_format, user_matr
 
     else:
         
-        print("fromR++: user_matrix")
+        print("RPC: user_matrix")
 
         if file_format == "distance":
             num_entries, num_rows, num_columns, user_matrix = distance_matrix_user_matrix(user_matrix)
@@ -163,6 +163,7 @@ def Ripser_plusplus_Converter(prog, arguments, file_name, file_format, user_matr
 
         for dim in range(res.num_dimensions):
             barcodes_dict[dim] = np.array([np.array(res.set_of_barcodes[dim].barcodes[coord]) for coord in range(res.set_of_barcodes[dim].num_barcodes)])
+        print("RPC:", barcodes_dict)
         return barcodes_dict
         
 
