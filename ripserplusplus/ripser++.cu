@@ -2185,7 +2185,7 @@ public:
                                       << std::flush;
 #endif
                             birth_death_coordinate barcode = {diameter,death};
-                            list_of_barcodes[dim].push_back(barcode);
+                            // list_of_barcodes[dim].push_back(barcode);
                         }
 #endif
 
