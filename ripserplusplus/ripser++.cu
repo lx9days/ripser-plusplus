@@ -159,6 +159,7 @@ struct index_t_pair_struct{//data type for a pivot in the coboundary matrix: (ro
 typedef struct {
     value_t birth;
     value_t death;
+    std::vector<index_t> vertices;
 } birth_death_coordinate;
 typedef struct{
     index_t num_barcodes;
@@ -2185,7 +2186,7 @@ public:
                                       << std::flush;
 #endif
                             birth_death_coordinate barcode = {diameter,death};
-                            // list_of_barcodes[dim].push_back(barcode);
+                            list_of_barcodes[dim].push_back(barcode);
                         }
 #endif
 
