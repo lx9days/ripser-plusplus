@@ -2174,7 +2174,7 @@ public:
 
                     }else{
 #if defined(PRINT_PERSISTENCE_PAIRS) || defined(PYTHON_BARCODE_COLLECTION)
-                        value_t death= pivot.diameter;
+                        value_t death= pivot.index;
                         if (death > diameter * ratio) {
 #ifdef INDICATE_PROGRESS
                             std::cerr << clear_line << std::flush;
