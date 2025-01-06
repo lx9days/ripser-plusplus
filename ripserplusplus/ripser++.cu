@@ -2184,7 +2184,7 @@ public:
                             std::cout << " [" << diameter << "," << death << ")" << std::endl
                                       << std::flush;
 #endif
-                            birth_death_coordinate barcode = {column_to_reduce.index,pivot.index};
+                            birth_death_coordinate barcode = {diameter,death};
                             list_of_barcodes[dim].push_back(barcode);
                         }
 #endif
