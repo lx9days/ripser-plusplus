@@ -2186,14 +2186,23 @@ public:
                             std::cout << " [" << diameter << "," << death << ")" << std::endl
                                       << std::flush;
 #endif
-                            // // 解码出生特征
-                            // std::vector<index_t> birth_vertices;
-                            // get_simplex_vertices(column_to_reduce.index, dim, max, std::back_inserter(birth_vertices));
+                            // 解码出生特征
+                            std::vector<index_t> birth_vertices;
+                            get_simplex_vertices(column_to_reduce.index, dim, max, std::back_inserter(birth_vertices));
 
-                            // // 解码消亡特征
-                            // std::vector<index_t> death_vertices;
-                            // get_simplex_vertices(pivot.index, dim, max, std::back_inserter(death_vertices));
-                            birth_death_coordinate barcode = {diameter,max};
+                            // 解码消亡特征
+                            std::vector<index_t> death_vertices;
+                            get_simplex_vertices(pivot.index, dim, max, std::back_inserter(death_vertices));
+
+                            if (birth_vertices.size() >= 2) {
+                                    index_t first_vertex = birth_vertices[0];
+                                    index_t second_vertex = birth_vertices[1];
+                                    std::cout << "Vertices: " << first_vertex << ", " << second_vertex << std::endl;
+                                } else {
+                                    std::cerr << "Error: birth_vertices size is less than 2!" << std::endl;
+                                }
+
+                            birth_death_coordinate barcode = {first_vertex,second_vertex};
                             list_of_barcodes[dim].push_back(barcode);
                         }
 #endif
