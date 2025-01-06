@@ -2107,7 +2107,8 @@ public:
     void compute_pairs_plusplus(
             index_t dim,
             index_t gpuscan_startingdim,
-            index_t max) {
+            // index_t max
+            ) {
 
 #ifdef PRINT_PERSISTENCE_PAIRS
         std::cout << "persistence intervals in dim " << dim << ":" << std::endl;
@@ -2185,13 +2186,13 @@ public:
                             std::cout << " [" << diameter << "," << death << ")" << std::endl
                                       << std::flush;
 #endif
-                            // 解码出生特征
-                            std::vector<index_t> birth_vertices;
-                            get_simplex_vertices(column_to_reduce.index, dim, max, std::back_inserter(birth_vertices));
+                            // // 解码出生特征
+                            // std::vector<index_t> birth_vertices;
+                            // get_simplex_vertices(column_to_reduce.index, dim, max, std::back_inserter(birth_vertices));
 
-                            // 解码消亡特征
-                            std::vector<index_t> death_vertices;
-                            get_simplex_vertices(pivot.index, dim, max, std::back_inserter(death_vertices));
+                            // // 解码消亡特征
+                            // std::vector<index_t> death_vertices;
+                            // get_simplex_vertices(pivot.index, dim, max, std::back_inserter(death_vertices));
                             birth_death_coordinate barcode = {diameter,death};
                             list_of_barcodes[dim].push_back(barcode);
                         }
@@ -3196,7 +3197,9 @@ void ripser<compressed_lower_distance_matrix>::compute_barcodes() {
         sw.start();
 
         compute_pairs_plusplus(
-                dim, dim_forgpuscan, dist.size());
+                dim, dim_forgpuscan
+                // , dist.size()
+                );
         sw.stop();
 #ifdef PROFILING
         std::cerr<<"SUBMATRIX REDUCTION TIME for dim "<< dim<<": "<<sw.ms()/1000.0<<"s"<<"\n"<<std::endl;
