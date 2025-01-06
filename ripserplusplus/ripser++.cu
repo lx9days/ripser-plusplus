@@ -2106,8 +2106,8 @@ public:
 
     void compute_pairs_plusplus(
             index_t dim,
-            index_t gpuscan_startingdim,
-            // index_t max
+            index_t gpuscan_startingdim
+            // ,index_t max
             ) {
 
 #ifdef PRINT_PERSISTENCE_PAIRS
