@@ -2106,8 +2106,8 @@ public:
 
     void compute_pairs_plusplus(
             index_t dim,
-            index_t gpuscan_startingdim
-            // ,index_t max
+            index_t gpuscan_startingdim,
+            index_t max=0
             ) {
 
 #ifdef PRINT_PERSISTENCE_PAIRS
@@ -3197,8 +3197,8 @@ void ripser<compressed_lower_distance_matrix>::compute_barcodes() {
         sw.start();
 
         compute_pairs_plusplus(
-                dim, dim_forgpuscan
-                // , dist.size()
+                dim, dim_forgpuscan, 
+                dist.size()
                 );
         sw.stop();
 #ifdef PROFILING
