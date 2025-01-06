@@ -2193,7 +2193,7 @@ public:
                             // // 解码消亡特征
                             // std::vector<index_t> death_vertices;
                             // get_simplex_vertices(pivot.index, dim, max, std::back_inserter(death_vertices));
-                            birth_death_coordinate barcode = {diameter,death};
+                            birth_death_coordinate barcode = {diameter,max};
                             list_of_barcodes[dim].push_back(barcode);
                         }
 #endif
