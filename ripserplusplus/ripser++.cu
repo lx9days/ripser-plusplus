@@ -2195,12 +2195,12 @@ public:
                             get_simplex_vertices(pivot.index, dim, max, std::back_inserter(death_vertices));
 
 
-                                    // index_t first_vertex = birth_vertices[0];
-                                    // index_t second_vertex = birth_vertices[1];
+                                    index_t first_vertex = death_vertices[0];
+                                    index_t second_vertex = death_vertices[1];
 
 
-                            // birth_death_coordinate barcode = {first_vertex,second_vertex};
-                            birth_death_coordinate barcode = {diameter,death};
+                            birth_death_coordinate barcode = {first_vertex,second_vertex};
+                            // birth_death_coordinate barcode = {diameter,death};
                             list_of_barcodes[dim].push_back(barcode);
                         }
 #endif
