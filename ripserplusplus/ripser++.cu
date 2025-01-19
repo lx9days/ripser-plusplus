@@ -2209,6 +2209,7 @@ public:
 
                             
                             list_of_barcodes[dim].push_back(barcode_begin);
+                            list_of_barcodes[dim].push_back(barcode_measure);
                             list_of_barcodes[dim].push_back(barcode_birth);
                             list_of_barcodes[dim].push_back(barcode_death);
                             list_of_barcodes[dim].push_back(barcode_end);
