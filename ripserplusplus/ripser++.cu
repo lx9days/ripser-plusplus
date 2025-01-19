@@ -2201,18 +2201,14 @@ public:
 
                             // birth_death_coordinate barcode = {first_vertex,second_vertex};
                             // birth_death_coordinate barcode = {diameter,death};
-                            birth_death_coordinate barcode_begin = {0, diameter};
-                            birth_death_coordinate barcode_measure = {birth_vertices.size(), death_vertices.size()};
+                            birth_death_coordinate barcode_begin = {diameter,death};
                             birth_death_coordinate barcode_birth = {birth_vertices[0], birth_vertices[1]};
                             birth_death_coordinate barcode_death = {death_vertices[0], death_vertices[1]};
-                            birth_death_coordinate barcode_end = {death,0};
 
                             
                             list_of_barcodes[dim].push_back(barcode_begin);
-                            list_of_barcodes[dim].push_back(barcode_measure);
                             list_of_barcodes[dim].push_back(barcode_birth);
                             list_of_barcodes[dim].push_back(barcode_death);
-                            list_of_barcodes[dim].push_back(barcode_end);
                         }
 #endif
 
