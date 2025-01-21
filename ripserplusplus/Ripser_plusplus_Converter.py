@@ -117,7 +117,7 @@ def Ripser_plusplus_Converter(prog, arguments, file_name, file_format, user_matr
 
     else:
         
-        print("RPC: user_matrix")
+        # print("RPC: user_matrix")
 
         if file_format == "distance":
             num_entries, num_rows, num_columns, user_matrix = distance_matrix_user_matrix(user_matrix)
