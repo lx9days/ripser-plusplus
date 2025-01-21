@@ -163,7 +163,7 @@ def Ripser_plusplus_Converter(prog, arguments, file_name, file_format, user_matr
 
         for dim in range(res.num_dimensions):
             barcodes_dict[dim] = np.array([np.array(res.set_of_barcodes[dim].barcodes[coord]) for coord in range(res.set_of_barcodes[dim].num_barcodes)])
-        print("RPC:", barcodes_dict)
+        # print("RPC:", barcodes_dict)
         return barcodes_dict
         
 
